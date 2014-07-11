@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Isomorphic Graph Tool</title>
+		<meta name="description" content="A graph tool used mainly for observing isomorphic graphs." />
+		<meta name="author" content="Evan D'Elia" />
+		<link href="style.css" rel="stylesheet" type = "text/css">
+		<script src="C:/xampp/htdocs/jquery-ui-1.10.3/jquery-1.9.1.js"></script>
+		<script src="C:/xampp/htdocs/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+
+	</head>
+	<body>
+		<div id="page-container">
+			<div id="page">
+			<h1>Isomorphic Graphing Tool</h1>
+			<canvas id="canvas"></canvas>
+			
+			<div class = "info">Drag mouse into canvas</div>
+			<div>
+				<input name = "n" type = "text" maxlength = "2" id = "n" placeholder = "change preset"/>
+				<button onclick = "changeNodes()">Change Nodes</button>
+			</div>
+			<div>
+				<input name = "newX" type = "text" maxLength = "3" id = "newX" placeholder = "newX"/>
+				<input name = "newY" type = "text" maxLength = "3" id = "newY" placeholder = "newY"/>
+				<button onclick = "newNode()">Add Node</button>
+			</div>
+			<div>
+				<input name = "newConnect1" type = "text" maxLength = "1" id = "newConnect1" placeholder = "connect node1"/>
+				<input name = "newConnect2" type = "text" maxLength = "1" id = "newConnect2" placeholder = "connect node2"/>
+				<button onclick = "newConnection()">Add Connection</button>
+			</div>
+			<div class = "info">Degrees of Nodes</div>
+			
+			<h3>By: Evan D'Elia</h3>
+			
+			<div id="explanation">
+				<p>A number can be entered in the first text field in order to change the preset of the shape. By preset, I mean
+				you can change the graph to whatever regular polygon you wish to start with.</p>
+				<p>The second line of text fields can be used to create a new node starting with a degree of zero at the x and y coordinates you provide. Displayed
+				directly below the canvas space are the x and y coordinates of your mouse when it enters the canvas. Use these numbers to determine where you would like to 
+				place your new node. The canvas size is 500px by 500px so please keep the values you enter between 0  and 500.</p>
+				<p>The third line of text fields can be used to create an edge between the two nodes you enter. Use the numbers displayed at the top right of each node
+				in order to reference the nodes you wish to connect.</p>
+				<p>The final information below the canvas displays the degree of each node. Each position in the array enclosed in brackets
+				corresponds directly and sequentially to a node on the canvas. For instance, the first number corresponds to the degree of node 0. Using all these pieces of information
+				you have all you need to determine if two graphs are isomorphic. For example, if you start out with a preset regular polygon you can move the nodes around in any way you 
+				wish but as long as you don't add edges or nodes, you will always have a graph isomorphic to the original preset polygon. Enjoy!
+				<p>I plan to use this tool to create unique isomorphic graphs. I will then use these pictures for a website that will test how quickly the human can detect whether
+				two graphs are isomorphic or not. Please feel free to email me with any questions or ideas concerning this tool at deliaevan1@gmail.com</p>
+				<p>To find out more about isomorphic graphs click <a href="http://en.wikipedia.org/wiki/Graph_isomorphism">here</a> 
+				to go to the Wikipedia page.</p>
+			</div>
+						
+			</div>
+		
+		</div>
+
+	
+	<script src="js/draggablenode.js"></script>
+	<script src="js/renderer.js"></script>
+	<script src="js/edge.js"></script>
+	<script src="js/manager.js"></script>
+	
+	</body>
+
+</html>
