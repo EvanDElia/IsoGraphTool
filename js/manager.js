@@ -228,3 +228,7 @@ function newConnection(){
 	nodes[connect].addDegree(nodes[i]);
 	edges.push(new Edge(nodes[i], nodes[connect]));
 }
+
+function CreateImg() {
+	renderer.createImg();
+}
