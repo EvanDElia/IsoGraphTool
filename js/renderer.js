@@ -29,3 +29,8 @@ Renderer.prototype.drawText = function(string, x, y){
 	this.context.font = "bold 16px Arial";
 	this.context.fillText(string, x, y);
 };
+
+Renderer.prototype.createImg = function(){
+	var image = this.canvas.toDataURL("image/png")//.replace("image/png", "image/octet-stream");
+	window.location.href = image;
+};
